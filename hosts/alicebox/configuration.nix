@@ -9,6 +9,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./../../modules/nix/core.nix
       inputs.home-manager.nixosModules.default
     ];
 
@@ -120,27 +121,7 @@
     };
   };
 
-  ###################
-  # SYSTEM PACKAGES #
-  ###################
 
-  programs.zsh.enable = true;
-  programs.firefox.enable = true;
-  programs.steam.enable = true;
-
-  environment.systemPackages = with pkgs; [
-    fastfetch
-    rivalcfg
-    git
-    wget
-    curl
-    gh
-    thefuck
-  ];
-
-  virtualisation.vmware.host.enable = true;
-
-  nixpkgs.config.permittedInsecurePackages = [ "freeimage-unstable-2021-11-01" ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
