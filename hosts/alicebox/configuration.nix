@@ -4,6 +4,12 @@
 
 {
 
+  ##########################
+  # ALICEBOX CONFIGURATION #
+  ##########################
+
+  hardware.cpu.amd.updateMicrocode = true;
+
   ###########
   # MODULES #
   ###########
@@ -14,6 +20,7 @@
       ./hardware-configuration.nix
       ./../../modules/nix/core.nix
       ./../../modules/nix/plasma.nix
+      ./../../modules/nix/graphics-amd.nix
     ];
 
 
