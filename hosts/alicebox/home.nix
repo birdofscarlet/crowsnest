@@ -1,14 +1,38 @@
 { config, pkgs, ... }:
 
+#------ configuration specific to my desktop PC ------#
+
 {
+
+  ###########################
+  #    HOME CONFIGURATION   #
+  ###########################
+
+  programs.home-manager.enable = true;
   home.username = "cardinal";
   home.homeDirectory = "/home/cardinal";
   home.stateVersion = "24.05";
+
+  home.file =
+  {
+  };
+
+  home.sessionVariables =
+  {
+  };
+
+  ###########
+  # MODULES #
+  ###########
 
   imports =
   [
     ./../../modules/home-manager/zsh.nix
   ];
+
+  ###################
+  #    PACKAGES     #
+  ###################
 
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs;
@@ -26,14 +50,4 @@
     discord
   ];
 
-  home.file =
-  {
-  };
-
-  home.sessionVariables =
-  {
-  };
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
 }

@@ -1,18 +1,30 @@
 { config, pkgs, lib, inputs, ... }:
 
+#------ configuration specific to my desktop PC ------#
+
 {
 
-  #########
-  # NIXOS #
-  #########
+  ###########
+  # MODULES #
+  ###########
 
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      inputs.home-manager.nixosModules.default
       ./hardware-configuration.nix
       ./../../modules/nix/core.nix
       ./../../modules/nix/plasma.nix
-      inputs.home-manager.nixosModules.default
     ];
+
+
+  home-manager =
+  {
+    extraSpecialArgs = { inherit inputs; };
+    users =
+    {
+      "cardinal" = import ./home.nix;
+    };
+  };
 
 
   ###########
@@ -32,48 +44,6 @@
 
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
-
-  #########
-  # USERS #
-  #########
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.cardinal =
-  {
-    shell = pkgs.zsh;
-    isNormalUser = true;
-    description = "cardinal";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs;
-    [
-
-    ];
-  };
-
-  home-manager =
-  {
-    extraSpecialArgs = { inherit inputs; };
-    users =
-    {
-      "cardinal" = import ./home.nix;
-    };
-  };
-
-
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
-
 
   system.stateVersion = "24.11";
 

@@ -1,6 +1,9 @@
-# core user configuration shared across all hosts
 { config, pkgs, lib, inputs, ... }:
+
+#------ configuration shared across all PC hosts ------#
+
 {
+
   ###########################
   #   NIX-OS CONFIGURATION  #
   ###########################
@@ -53,11 +56,7 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-    #jack.enable = true;
-    #media-session.enable = true;
   };
-
-  # services.xserver.libinput.enable = true;
 
   ##########
   # LOCALE #
@@ -77,5 +76,20 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
+
+
+  #########
+  # USERS #
+  #########
+
+  users.users.cardinal =
+  {
+    shell = pkgs.zsh;
+    isNormalUser = true;
+    description = "cardinal";
+    extraGroups = [ "networkmanager" "wheel" ];
+  };
+
+
 
 }
