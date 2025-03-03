@@ -42,7 +42,6 @@
     pcmanfm
     obsidian
     aseprite
-    tutanota-desktop
     libreoffice-qt6-fresh
     (pkgs.callPackage ../../derivations/dungeondraft.nix {})
     wonderdraft
