@@ -47,6 +47,7 @@
     wonderdraft
     kdePackages.kate
     discord
+    modrinth-app
   ];
 
 }

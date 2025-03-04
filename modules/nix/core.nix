@@ -29,6 +29,9 @@
     curl
     gh
     thefuck
+    vlc
+    mullvad-vpn
+    ntfs3g
   ];
 
   virtualisation.vmware.host.enable = true;
@@ -49,6 +52,7 @@
   services.flatpak.enable = true;
   services.printing.enable = true;
   security.rtkit.enable = true;
+  services.mullvad-vpn.enable = true;
 
   services.pipewire =
   {
