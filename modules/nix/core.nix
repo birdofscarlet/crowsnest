@@ -46,6 +46,7 @@
   # SERVICES #
   ############
 
+  services.flatpak.enable = true;
   services.printing.enable = true;
   security.rtkit.enable = true;
 
