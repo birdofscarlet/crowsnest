@@ -21,6 +21,7 @@
       ./../../modules/nix/core.nix
       ./../../modules/nix/plasma.nix
       ./../../modules/nix/graphics-amd.nix
+      ./../../modules/nix/nvf.nix
     ];
 
 
