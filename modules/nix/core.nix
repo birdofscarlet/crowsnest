@@ -19,9 +19,12 @@
   programs.firefox.enable = true;
   programs.steam.enable = true;
   programs.zsh.enable = true;
+  programs.thunderbird.enable = true;
 
   environment.systemPackages = with pkgs;
   [
+    protonmail-bridge
+    protonvpn-gui
     fastfetch
     rivalcfg
     git
@@ -30,7 +33,6 @@
     gh
     thefuck
     vlc
-    mullvad-vpn
     ntfs3g
   ];
 
