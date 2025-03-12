@@ -22,7 +22,6 @@
       ./../../modules/nix/plasma.nix
       ./../../modules/nix/graphics-amd.nix
       ./../../modules/nix/nvf.nix
-      ./../../modules/nix/protonmail.nix
     ];
 
 

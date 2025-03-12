@@ -23,8 +23,9 @@
 
   environment.systemPackages = with pkgs;
   [
-    protonmail-bridge
     protonvpn-gui
+    protonmail-desktop
+    keepassxc
     fastfetch
     rivalcfg
     git
@@ -54,7 +55,12 @@
   services.flatpak.enable = true;
   services.printing.enable = true;
   security.rtkit.enable = true;
-  services.mullvad-vpn.enable = true;
+  services.passSecretService.enable = true;
+  services.protonmail-bridge = {
+  enable = true;
+  package = pkgs.protonmail-bridge-gui;
+  path = with pkgs; [keepassxc];
+};
 
   services.pipewire =
   {
