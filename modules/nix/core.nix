@@ -20,6 +20,7 @@
   programs.steam.enable = true;
   programs.zsh.enable = true;
   programs.thunderbird.enable = true;
+  programs.thunderbird.package = pkgs.thunderbird-latest;
 
   environment.systemPackages = with pkgs;
   [
