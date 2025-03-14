@@ -17,6 +17,8 @@ programs.zsh =
       "rebuild" = "sudo nixos-rebuild switch";
       "test" = "sudo nixos-rebuild test";
       "drybuild" = "sudo nixos-rebuild dry-build";
+      "rebuildab" = "sudo nixos-rebuild switch --flake ~/crowsnest#alicebox";
+      "testab" = "sudo nixos-rebuild test --flake ~/crowsnest#alicebox";
     };
 
     oh-my-zsh =

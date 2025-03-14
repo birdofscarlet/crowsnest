@@ -23,8 +23,9 @@
 
   environment.systemPackages = with pkgs;
   [
-    protonvpn-gui
-    protonmail-desktop
+    mullvad-vpn
+    libsecret
+    bridge-utils
     keepassxc
     fastfetch
     rivalcfg
@@ -35,6 +36,9 @@
     thefuck
     vlc
     ntfs3g
+    fd
+    fzf
+    btop
   ];
 
   virtualisation.vmware.host.enable = true;
@@ -57,10 +61,11 @@
   security.rtkit.enable = true;
   services.passSecretService.enable = true;
   services.protonmail-bridge = {
-  enable = true;
+  enable = false;
   package = pkgs.protonmail-bridge-gui;
   path = with pkgs; [keepassxc];
 };
+  services.mullvad-vpn.enable = true;
 
   services.pipewire =
   {
