@@ -24,6 +24,7 @@
   environment.systemPackages = with pkgs;
   [
     mullvad-vpn
+    protonmail-bridge-gui
     libsecret
     bridge-utils
     keepassxc
