@@ -16,15 +16,16 @@
   # SYSTEM PACKAGES #
   ###################
 
-  programs.firefox.enable = true;
   programs.steam.enable = true;
   programs.zsh.enable = true;
   programs.thunderbird.enable = true;
   programs.thunderbird.package = pkgs.thunderbird-latest;
+  programs.steam.extraCompatPackages = with pkgs; [ proton-ge-bin ];
 
   environment.systemPackages = with pkgs;
   [
-    mullvad-vpn
+    protonvpn-gui
+    librewolf
     protonmail-bridge-gui
     libsecret
     bridge-utils
@@ -41,11 +42,17 @@
     fd
     fzf
     btop
+    wineWowPackages.stable
   ];
 
   virtualisation.vmware.host.enable = true;
 
-  nixpkgs.config.permittedInsecurePackages = [ "freeimage-unstable-2021-11-01" ];
+  nixpkgs.config.permittedInsecurePackages =
+  [
+  "freeimage-unstable-2021-11-01"
+  "dotnet-sdk-6.0.428"
+  "dotnet-runtime-6.0.36"
+  ];
 
   ########
   # BOOT #
@@ -62,11 +69,6 @@
   services.printing.enable = true;
   security.rtkit.enable = true;
   services.passSecretService.enable = true;
-  services.protonmail-bridge = {
-  enable = false;
-  package = pkgs.protonmail-bridge-gui;
-  path = with pkgs; [keepassxc];
-};
   services.mullvad-vpn.enable = true;
 
   services.pipewire =

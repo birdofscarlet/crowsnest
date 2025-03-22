@@ -28,6 +28,7 @@
   imports =
   [
     ./../../modules/home-manager/zsh.nix
+    ./../../modules/nix/build.nix
   ];
 
   ###################
