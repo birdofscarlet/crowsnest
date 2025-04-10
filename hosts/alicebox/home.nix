@@ -49,6 +49,7 @@
     kdePackages.kate
     discord
     prismlauncher
+    duckstation
   ];
 
 }

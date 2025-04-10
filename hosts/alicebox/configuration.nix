@@ -9,6 +9,8 @@
   ##########################
 
   hardware.cpu.amd.updateMicrocode = true;
+  programs.adb.enable = true;
+  users.users.cardinal.extraGroups = ["adbusers"];
 
   ###########
   # MODULES #

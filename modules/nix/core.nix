@@ -16,6 +16,7 @@
   # SYSTEM PACKAGES #
   ###################
 
+  programs.firefox.enable = true;
   programs.steam.enable = true;
   programs.zsh.enable = true;
   programs.thunderbird.enable = true;
@@ -25,11 +26,10 @@
   environment.systemPackages = with pkgs;
   [
     protonvpn-gui
-    librewolf
     protonmail-bridge-gui
     libsecret
     bridge-utils
-    keepassxc
+    proton-pass
     fastfetch
     rivalcfg
     git
