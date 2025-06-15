@@ -39,6 +39,7 @@
   home.packages = with pkgs;
   [
     ringracers
+    srb2kart
     grimblast
     pcmanfm
     obsidian

@@ -19,17 +19,14 @@
   programs.firefox.enable = true;
   programs.steam.enable = true;
   programs.zsh.enable = true;
-  programs.thunderbird.enable = true;
-  programs.thunderbird.package = pkgs.thunderbird-latest;
   programs.steam.extraCompatPackages = with pkgs; [ proton-ge-bin ];
 
   environment.systemPackages = with pkgs;
   [
-    protonvpn-gui
-    protonmail-bridge-gui
-    libsecret
-    bridge-utils
     proton-pass
+    protonmail-desktop
+    obs-studio
+    kdePackages.kdenlive
     fastfetch
     rivalcfg
     git
@@ -43,9 +40,14 @@
     fzf
     btop
     wineWowPackages.stable
+    gimp
   ];
 
-  virtualisation.vmware.host.enable = true;
+  fonts.packages = with pkgs; [
+
+];
+
+  # virtualisation.vmware.host.enable = true;
 
   nixpkgs.config.permittedInsecurePackages =
   [
@@ -68,8 +70,6 @@
   services.flatpak.enable = true;
   services.printing.enable = true;
   security.rtkit.enable = true;
-  services.passSecretService.enable = true;
-  services.mullvad-vpn.enable = true;
 
   services.pipewire =
   {
@@ -83,7 +83,7 @@
   # LOCALE #
   ##########
 
-  time.timeZone = "America/New_York";
+  time.timeZone = "America/Chicago";
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings =
   {

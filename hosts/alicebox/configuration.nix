@@ -24,6 +24,7 @@
       ./../../modules/nix/plasma.nix
       ./../../modules/nix/graphics-amd.nix
       ./../../modules/nix/nvf.nix
+      ./../../modules/nix/networking.nix
 
     ];
 
@@ -37,25 +38,6 @@
     };
   };
 
-
-  ###########
-  # NETWORK #
-  ###########
-
-  networking.hostName = "alicebox";
-
-  networking.networkmanager.enable = true;
-
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # services.openssh.enable = true;
-
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-
-  system.stateVersion = "24.11";
+    system.stateVersion = "24.11";
 
 }
