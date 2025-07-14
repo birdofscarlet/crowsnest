@@ -41,13 +41,12 @@
     btop
     wineWowPackages.stable
     gimp
+    virtualbox
   ];
 
   fonts.packages = with pkgs; [
 
 ];
-
-  # virtualisation.vmware.host.enable = true;
 
   nixpkgs.config.permittedInsecurePackages =
   [
