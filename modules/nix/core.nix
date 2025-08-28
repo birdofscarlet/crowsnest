@@ -21,6 +21,11 @@
   programs.zsh.enable = true;
   programs.steam.extraCompatPackages = with pkgs; [ proton-ge-bin ];
 
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "cardinal" ];
+  boot.kernelParams = [ "kvm.enable_virt_at_load=0" ];
+  nixpkgs.config.allowUnsupportedSystem = true;
+
   environment.systemPackages = with pkgs;
   [
     proton-pass
@@ -41,7 +46,7 @@
     btop
     wineWowPackages.stable
     gimp
-    virtualbox
+    yt-dlp
   ];
 
   fonts.packages = with pkgs; [

@@ -51,6 +51,9 @@
     discord
     prismlauncher
     duckstation
+    audacity
+    teams-for-linux
+    ciscoPacketTracer8
   ];
 
 }
